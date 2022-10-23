@@ -15,13 +15,9 @@ get_input_and_find_min:
         movq    %rsp, %rbp
         .cfi_def_cfa_register 6
         subq    $32, %rsp
-        movq    %rdi, -24(%rbp)         # pointer to array A, where all 
-input data entered from user's keyboard will be stored
-        movl    %esi, -28(%rbp)         # int N (scaned variable from 
-users's keyboard)
-        movl    $100000, -8(%rbp)       # mi = 100000 - local initial min 
-value which is used as a return value equal to min element from all input 
-data
+        movq    %rdi, -24(%rbp)         # pointer to array A, where all input data entered from user's keyboard will be stored
+        movl    %esi, -28(%rbp)         # int N (scaned variable from users's keyboard)
+        movl    $100000, -8(%rbp)       # mi = 100000 - local initial min value which is used as a return value equal to min element from all input data
         movl    $0, -4(%rbp)
         jmp     .L2
 .L4:
@@ -72,15 +68,11 @@ func:
         .cfi_offset 6, -16
         movq    %rsp, %rbp
         .cfi_def_cfa_register 6
-        movq    %rdi, -24(%rbp)         # pointer to array A, where all 
-input data entered from user is stored
-        movq    %rsi, -32(%rbp)         # pointer to array B, where all 
-proccessed data (elements not equal to min) will be stored
-        movl    %edx, -36(%rbp)         # int N (scaned variable from 
-users's keyboard) stores amount of initial numbers
+        movq    %rdi, -24(%rbp)         # pointer to array A, where all input data entered from user is stored
+        movq    %rsi, -32(%rbp)         # pointer to array B, where all proccessed data (elements not equal to min) will be stored
+        movl    %edx, -36(%rbp)         # int N (scaned variable from users's keyboard) stores amount of initial numbers
         movl    %ecx, -40(%rbp)         # int mi
-        movl    $0, -8(%rbp)            # counter = 0 - initializing 
-counter for finding amount of elements not equal to minimum
+        movl    $0, -8(%rbp)            # counter = 0 - initializing counter for finding amount of elements not equal to minimum
         movl    $0, -4(%rbp)            # int i = 0 - variable of loop
         jmp     .L7
 .L9:
@@ -133,10 +125,8 @@ print_result:
         movq    %rsp, %rbp
         .cfi_def_cfa_register 6
         subq    $32, %rsp
-        movq    %rdi, -24(%rbp)         # array B, where all proccessed 
-data according to the task (elements not equal to min element) is stored
-        movl    %esi, -28(%rbp)         # int counter - amount of numbers 
-not equal to min element
+        movq    %rdi, -24(%rbp)         # array B, where all proccessed data according to the task (elements not equal to min element) is stored
+        movl    %esi, -28(%rbp)         # int counter - amount of numbers not equal to min element
         movl    $0, -4(%rbp)            # int i = 0 - variable of loop
         jmp     .L12
 .L13:
