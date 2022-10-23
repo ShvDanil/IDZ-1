@@ -37,11 +37,9 @@ main:
         leaq    .LC0(%rip), %rdi
         movl    $0, %eax
         call    __isoc99_scanf@PLT
-        movl    -112(%rbp), %eax        # int N (scaned variable from 
-users's keyboard)
+        movl    -112(%rbp), %eax        # int N (scaned variable from users's keyboard)
         cltq
-        salq    $2, %rax                # array A, where all input data 
-from user's keyboard will be stored
+        salq    $2, %rax                # array A, where all input data from user's keyboard will be stored
         movq    %rax, %rdx
         subq    $1, %rdx
         movq    %rdx, -88(%rbp)
@@ -66,8 +64,7 @@ from user's keyboard will be stored
         movq    %rax, -80(%rbp)
         movl    -112(%rbp), %eax
         cltq
-        salq    $2, %rax                # array B, where all proccessed 
-data according to the task will be stored
+        salq    $2, %rax                # array B, where all proccessed data according to the task will be stored
         movq    %rax, %rdx
         subq    $1, %rdx
         movq    %rdx, -72(%rbp)
@@ -104,13 +101,11 @@ loop
         leaq    .LC0(%rip), %rdi
         movl    $0, %eax
         call    __isoc99_scanf@PLT
-        movq    -80(%rbp), %rax         # A[i] - scaned number from user's 
-input
+        movq    -80(%rbp), %rax         # A[i] - scaned number from user's input
         movl    -96(%rbp), %edx
         movslq  %edx, %rdx
         movl    (%rax,%rdx,4), %eax
-        cmpl    %eax, -92(%rbp)         # if A[i] < mi -> condition of 
-comparison for finding min el
+        cmpl    %eax, -92(%rbp)         # if A[i] < mi -> condition of comparison for finding min el
         jle     .L3
         movq    -80(%rbp), %rax
         movl    -96(%rbp), %edx
@@ -123,8 +118,7 @@ comparison for finding min el
         movl    -112(%rbp), %eax
         cmpl    %eax, -96(%rbp)
         jl      .L4
-        movl    $0, -100(%rbp)          # counter = 0 - initializing 
-counter for finding amount of elements not equal with minimum
+        movl    $0, -100(%rbp)          # counter = 0 - initializing counter for finding amount of elements not equal with minimum
         movl    $0, -104(%rbp)          # int i = 0 - variable of loop
         jmp     .L5     
 .L7:
