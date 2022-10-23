@@ -10,20 +10,16 @@ get_input_and_find_min:
 .LFB0:
         .cfi_startproc
         pushq   %rbp
-        pushq   %r12                    # pointer to array A, where all 
-input data entered from user's keyboard will be stored
-        pushq   %r13                    # int N (scaned variable from 
-users's keyboard)
+        pushq   %r12                    # pointer to array A, where all input data entered from user's keyboard will be stored
+        pushq   %r13                    # int N (scaned variable from users's keyboard)
         pushq   %r14                    # int mi - min element
         pushq   %r15                    # int i - local loop variable
         .cfi_def_cfa_offset 16
         .cfi_offset 6, -16
         movq    %rsp, %rbp
         .cfi_def_cfa_register 6 
-        movq    %rdi, %r12              # pointer to array A, where all 
-input data entered from user's keyboard will be stored
-        movq    %rsi, %r13              # int N (scaned variable from 
-users's keyboard)
+        movq    %rdi, %r12              # pointer to array A, where all input data entered from user's keyboard will be stored
+        movq    %rsi, %r13              # int N (scaned variable from users's keyboard)
         movq    $100000, %r14           # int mi - min element
         movq    $0, %r15
         jmp     .L2
@@ -76,22 +72,17 @@ func:
 .LFB1:
         .cfi_startproc
         pushq   %rbp
-        pushq   %r12                    # pointer to array A, where all 
-input data entered from user's keyboard is stored
-        pushq   %r13                    # pointer to array B, where all 
-proccessed data (elements not equal to min) will be stored
+        pushq   %r12                    # pointer to array A, where all input data entered from user's keyboard is stored
+        pushq   %r13                    # pointer to array B, where all proccessed data (elements not equal to min) will be stored
         pushq   %r14                    # int N
         pushq   %r15                    # int mi - min element
-        pushq   %rbx                    # int counter - amount of elements 
-not equal to min element
+        pushq   %rbx                    # int counter - amount of elements not equal to min element
         .cfi_def_cfa_offset 16
         .cfi_offset 6, -16
         movq    %rsp, %rbp
         .cfi_def_cfa_register 6
-        movq    %rdi, %r12              # pointer to array A, where all 
-input data entered from user's keyboard is stored
-        movq    %rsi, %r13              # pointer to array B, where all 
-proccessed data (elements not equal to min) will be stored
+        movq    %rdi, %r12              # pointer to array A, where all input data entered from user's keyboard is stored
+        movq    %rsi, %r13              # pointer to array B, where all proccessed data (elements not equal to min) will be stored
         movq    %rdx, %r14              # int N
         movq    %rcx, %r15              # int mi - min element
         movq    $0, %rbx                # int counter = 0
@@ -148,18 +139,15 @@ print_result:
 .LFB2:
         .cfi_startproc
         pushq   %rbp
-        pushq   %r12                    # pointer to array B, where all 
-proccessed data (elements not equal to min) is stored
-        pushq   %r13                    # int counter - amount of elements 
-not equal to min element
+        pushq   %r12                    # pointer to array B, where all proccessed data (elements not equal to min) is stored
+        pushq   %r13                    # int counter - amount of elements not equal to min element
         pushq   %r14                    # int i - local loop variable
         pushq   %r15                    
         .cfi_def_cfa_offset 16
         .cfi_offset 6, -16
         movq    %rsp, %rbp
         .cfi_def_cfa_register 6
-        movq    %rdi, %r12              # pointer to array B, where all 
-proccessed data (elements not equal to min) is stored
+        movq    %rdi, %r12              # pointer to array B, where all proccessed data (elements not equal to min) is stored
         movq    %rsi, %r13              # int counter
         movq    $0, %r14                # int i = 0
         jmp     .L12
